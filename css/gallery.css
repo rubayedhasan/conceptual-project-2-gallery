@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    /*    background-color: #697678;*/
+    background-color: #4c4c4c;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*banner section css start*/
+.banner {
+    display: flex;
+    height: 100vh;
+}
+
+.banner-left {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-right {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+/*animated text section css*/
+.banner-title {
+    font-size: 60px;
+    font-weight: 700;
+    white-space: nowrap;
+    position: relative;
+    color: transparent;
+}
+
+.banner-title::before {
+    content: "Department of CST";
+    color: #22bedd;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: banner-animated-text 3s linear infinite;
+}
+
+/*animation for banner title*/
+@keyframes banner-animated-text {
+    0% {
+        content: "D|";
+    }
+
+    4% {
+        content: "De|";
+    }
+
+    8% {
+        content: "Dep|";
+    }
+
+    12% {
+        content: "Depa|";
+    }
+
+    16% {
+        content: "Depar|";
+    }
+
+    20% {
+        content: "Depart|";
+    }
+
+    24% {
+        content: "Departm|";
+    }
+
+    28% {
+        content: "Departme|";
+    }
+
+    32% {
+        content: "Departmen|";
+    }
+
+    36% {
+        content: "Department|";
+    }
+
+    40% {
+        content: "Department |";
+    }
+
+    44% {
+        content: "Department o|";
+    }
+
+    48% {
+        content: "Department of|";
+    }
+
+    52% {
+        content: "Department of |";
+    }
+
+    56% {
+        content: "Department of C|";
+    }
+
+    60% {
+        content: "Department of CS|";
+    }
+
+    64%,
+    82% {
+        content: "Department of CST|";
+    }
+
+    83% {
+        content: "Department of CS|";
+    }
+
+    84% {
+        content: "Department of C|";
+    }
+
+    85% {
+        content: "Department of |";
+    }
+
+    86% {
+        content: "Department of|";
+    }
+
+    87% {
+        content: "Department o|";
+    }
+
+    88% {
+        content: "Department |";
+    }
+
+    89% {
+        content: "Department|";
+    }
+
+    90% {
+        content: "Departmen|";
+    }
+
+    91% {
+        content: "Departme|";
+    }
+
+    92% {
+        content: "Departm|";
+    }
+
+    93% {
+        content: "Depart|";
+    }
+
+    94% {
+        content: "Depar|";
+    }
+
+    95% {
+        content: "Depa|";
+    }
+
+    96% {
+        content: "Dep|";
+    }
+
+    97% {
+        content: "De|";
+    }
+
+    98% {
+        content: "D|";
+    }
+
+    99%,
+    100% {
+        content: "|";
+    }
+
+}
+
+.banner-text {
+    color: #fff;
+    padding: 15px 0;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.banner-btn {
+    margin-top: 15px;
+}
+
+.read-more-btn {
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #22bedd;
+    border-radius: 3px;
+    transition: box-shadow 10s, color 2.8s;
+}
+
+.read-more-btn:hover {
+    color: darkgreen;
+    box-shadow: 1px 1px 15px 100px #121212 inset;
+}
+
+.banner-right img {
+    border: 5px ridge #22bedd;
+}
+
+/*banner section end*/
+/*gallery section start*/
+.gallery {
+    /*    margin: 50px;*/
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gallery-title h1 {
+    display: inline-block;
+    color: #22bedd;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 0 15px;
+    border-left: 4px solid #22bedd;
+    border-right: 4px solid #22bedd;
+    line-height: 0.8;
+}
+
+.gallery-items {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.photo {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*overlay style start*/
+.photo::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: all 2s ease-out;
+}
+
+.photo:hover::before {
+    opacity: 1;
+}
+
+/*overlay style end*/
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*animated or hovered border style start*/
+.border {
+    background: #22bedd;
+    position: absolute;
+    transition: 3s ease-in-out;
+}
+
+.border.top,
+.border.bottom {
+    width: 292px;
+    height: 5px;
+}
+
+.border.left,
+.border.right {
+    height: 292px;
+    width: 5px;
+}
+
+.top {
+    top: 3px;
+    right: 100%;
+}
+
+.right {
+    right: 3px;
+    bottom: 100%;
+}
+
+.bottom {
+    bottom: 3px;
+    left: 100%;
+}
+
+.left {
+    left: 3px;
+    top: 100%;
+}
+
+.photo:hover .top {
+    right: 5px;
+}
+
+.photo:hover .right {
+    bottom: 5px;
+}
+
+.photo:hover .bottom {
+    left: 5px;
+}
+
+.photo:hover .left {
+    top: 5px;
+}
+
+/*animated or hovered border style end*/
+/*style start for transprent text over the overlay*/
+.photo-content {
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    transform: translateY(250px);
+    opacity: 0;
+    transition: all 3s linear;
+}
+
+.photo:hover .photo-content {
+    opacity: 1;
+}
+
+.photo-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.photo-content p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*style end for transprent text over the overlay*/
+/*gallery section end*/
+
+/*header and footer section start*/
+.head-text,
+.footer-text {
+    background-color: #121212;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.head-text {
+    margin: 0;
+}
+
+.footer-text {
+    margin: 20px 0;
+}
+
+.head-text p,
+.footer-text p {
+    color: #fff;
+    padding: 15px 0;
+}
+
+.head-text p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer-text p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/*header and footer section end*/
+
+/*responsive style start*/
+
+/*style for <<extra small and small deices>>*/
+@media screen and (max-width:991.98px) {
+    .banner {
+        display: block;
+    }
+
+
+    .banner-left,
+    .banner-right {
+        display: block;
+    }
+
+    .banner-title {
+        margin-bottom: 40px;
+    }
+
+    .banner-title::before {
+        padding: 15px 20px;
+    }
+
+    .banner-text {
+        padding: 20px;
+    }
+
+    .banner-btn {
+        text-align: center;
+        margin: 0 15px 30px;
+    }
+
+    .read-more-btn {
+        display: block;
+    }
+
+    .banner-right {
+        text-align: center;
+    }
+}
+
+/*style for <<extra small and small deices>>*/
+/*style for <<extra small deices>>*/
+@media screen and (max-width:575.98px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .banner {
+        height: 45em;
+    }
+
+    .head-text p {
+        font-size: 18px;
+    }
+
+    .banner-title {
+        font-size: 38px;
+    }
+
+    .banner-text {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .read-more-btn {
+        font-size: 15px;
+    }
+
+
+    .banner-right img {
+        width: 88%;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .photo img {
+        width: 80%;
+    }
+}
+
+/*style for <<extra small deices>>*/
+/*style for <<small deices>>*/
+@media screen and (min-width:576px) and (max-width:767.98px) {
+    .container {
+        width: 540px;
+        margin: 0 auto;
+    }
+
+    .banner {
+        height: 55em;
+    }
+
+    .head-text p,
+    .footer-text p {
+        font-size: 20px;
+    }
+
+    .banner-title {
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+
+    .banner-text {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .read-more-btn {
+        font-size: 20px;
+    }
+
+
+    .banner-right img {
+        width: 100%;
+    }
+
+    .gallery-items {
+        gap: 40px;
+    }
+}
+
+/*style for <<small deices>>*/
+/*style for <<medium deices>>*/
+@media screen and (min-width:768px) and (max-width:991.98px) {
+    .container {
+        width: 720px;
+        margin: 0 auto;
+    }
+
+    .banner {
+        height: 58em;
+    }
+
+    .banner-title {
+        margin-bottom: 30px;
+    }
+
+    .banner-right img {
+        width: 100%;
+    }
+
+    .gallery-items {
+        gap: 30px;
+    }
+}
+
+/*style for <<medium deices>>*/
+/*style for <<large deices>>*/
+@media screen and (min-width:992px) and (max-width:1199.98px){
+    .container{
+        width: 960px;
+        margin: 0 auto;
+    }
+    .banner-left {
+    flex: 1;
+}
+
+.banner-right {
+    flex: 2;
+    padding: 0 35px;
+}
+ .banner-right img {
+   width: 100%;
+}
+    .banner-title {
+    font-size: 45px;
+}
+}
+/*style for <<large deices>>*/
+/*style for <<extra large deices>>*/
+@media screen and (min-width:1200px) and (max-width:1399.98px){
+    .container{
+        width: 1140px;
+        margin: 0 auto;
+    }
+}
+/*style for <<extra large deices>>*/
+/*style for <<extra extra large deices>>*/
+@media screen and (min-width:1400px){
+    .container{
+        width: 1320px;
+        margin: 0 auto;
+    }
+}
+/*style for <<extra extra large deices>>*/
+
+
+/*responsive style end*/
